@@ -1,11 +1,12 @@
 pipeline{
   agent any
   stages{
-    stage(CodeCheckOut'){
+    stage('CodeCheckOut'){
       steps {
         script{
         checkout scm
         def mvnHome = tool 'maven-3'
+         def JAVA_HOME = tool 'JAVA_1.8'
         }
        }
      }
